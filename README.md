@@ -1,4 +1,4 @@
-# ninja-smoothies-tutorial
+# finance-app
 
 > A Vue.js project
 

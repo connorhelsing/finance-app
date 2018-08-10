@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/Index'
-import AddSmoothie from '@/components/AddSmoothie'
-import EditSmoothie from '@/components/EditSmoothie'
+import Revenue from '@/components/Revenue'
+import Expenses from '@/components/Expenses'
+import Receivables from '@/components/Receivables'
+import AddRevenue from '@/components/AddRevenue'
 
 Vue.use(Router)
 
@@ -14,14 +16,24 @@ export default new Router({
       component: Index
     },
     {
-      path: '/add-smoothie',
-      name: 'AddSmoothie',
-      component: AddSmoothie
+      path: '/revenue',
+      name: 'Revenue',
+      component: Revenue
     },
     {
-      path: '/edit-smoothie/:smoothie_slug',
-      name: 'EditSmoothie',
-      component: EditSmoothie
+      path: '/expenses',
+      name: 'Expenses',
+      component: Expenses
+    },
+    {
+      path: '/receivables',
+      name: 'Receivables',
+      component: Receivables
+    },
+    {
+      path: '/revenue/add-revenue',
+      name: 'AddRevenue',
+      component: AddRevenue
     }
   ]
 })

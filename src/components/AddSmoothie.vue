@@ -1,5 +1,10 @@
 <template>
  <div class="add-smoothie container">
+   <div class="addRevenue">
+      <a href="" class="btn-floating btn-large halfway-fab green">
+        <i class="material-icons">add</i>
+      </a>
+    </div>
    <h2 class="center-align indigo-text">Add New Smoothie Recipe</h2>
    <form @submit.prevent="AddSmoothie">
      <div class="field title">
@@ -103,5 +108,9 @@ export default {
   color: #aaa;
   font-size: 1.4em;
   cursor: pointer;
+}
+.addRevenue{
+  object-position: top;
+  object-position: right;
 }
 </style>
