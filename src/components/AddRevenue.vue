@@ -1,45 +1,56 @@
 <template>
- <div class="add-revenue container">
-   <h2 class="center-align indigo-text">Add New Revenue Record</h2>
-   <form @submit.prevent="AddSmoothie">
-     <div class="field" v-for="(value, key) in fields" :key="key">
-       <label for="field">{{value.title}}</label>
-       <input type="text" name="field" v-model="fields[key].value">
+ <div class="add-revenue container is-fluid">
+   <h2 class="title is-2">Add New Revenue Record</h2>
+   <form @submit="addRevenue">
+  <!--    <b-field label="Date">
+       <b-datepicker
+         placeholder="Type or select a date..."
+         :readonly="falsße">
+       </b-datepicker>
+     </b-field> -->
+     <div v-for="(c, index) in columns" :key="index" class="field">
+       <label for="fields">{{c.label}}</label>
+       <input class="input" type="text" v-model="c.field" placeholder="Enter data here...">
      </div>
-     <div class="field center-align">
-      <p v-if="feedback" class="red-text">{{feedback}}</p>
-       <button class="btn green">Add Record</button>
-     </div>
+      <button class="button is-success">Add Record</button>
    </form>
  </div>
 </template>
 
 <script>
-// import db from '@/firebase/init'
+import db from '@/firebase/init'
 // import slugify from 'slugify'
 export default {
   name: 'AddRevenue',
   data () {
     return {
-      fields: {
-      clientName: {title: 'Client name', value: null},
-      date: {title: 'Date', value: null},
-      invoiceNumber: {title: 'Invoice number', value: null},
-      description: {title: 'Description', value: null},
-      amount: {title: 'Amount', value: null}
-        },
+      columns: {
+        date: {label: 'Date', field: null},
+        invoiceId: {label: 'Invoice ID', field: null},
+        clientName: {label: 'Client name', field: null},
+        description: {label: 'Description', field: null},
+        amount: {label: 'Amount', field: null}
+      },
       feedback: null,
-      slug: null
     }
   },
   methods: {
-  //   EditSmoothie(){
-  //     console.log(this.smoothie.title, this.smoothie.ingredients)
-  //   },
-    AddSmoothie() {
-      if (this.title){
-        this.feedback = null
-  //       // create slug
+    addRevenue() {
+      console.log(this.columns)
+      db.collection('revenue').add({
+        date: this.columns.date.field,
+        invoiceId: this.columns.invoiceId.field,
+        clientName: this.columns.clientName.field,
+        description: this.columns.description.field,
+        amount: this.columns.amount.field
+      }).then(() => {
+        this.$router.push({name: 'Revenue'})
+      }).catch(err => {
+        console.log(err)
+      })
+
+  //
+    // create slug
   //       this.slug = slugify(this.title, {
   //         replacement: '-',
   //         remove: /[$*_+~.()'"!\-:@]/g,
@@ -54,9 +65,6 @@ export default {
   //       }).catch(err => {
   //         console.log(err)
   //       })
-      } else {
-        this.feedback = "You must complete all required fields"
-      }
   //   },
   //   addIng() {
   //     if(this.another){
@@ -78,30 +86,10 @@ export default {
 </script>
 
 
-<style>
-/*.add-smoothie{
-  margin-top: 60px;
-  padding: 20px;
+<style scoped>
+.container{
+  position: fixed;
   max-width: 500px;
+  margin: 50px;
 }
-.add-smoothie h2{
-  font-size: 2em;
-  margin: 20px auto;
-}
-.add-smoothie .field{
-  margin: 20px auto;
-  position: relative;
-}
-.add-smoothie .delete{
-  position: absolute;
-  right: 0;
-  bottom: 16px;
-  color: #aaa;
-  font-size: 1.4em;
-  cursor: pointer;
-}
-.addRevenue{
-  object-position: top;
-  object-position: right;
-}*/
 </style>

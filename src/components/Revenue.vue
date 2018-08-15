@@ -1,17 +1,15 @@
 <template>
-  <div class="revenue container">
-      <h2>Revenue</h2>
-        <span class="btn-floating btn-large halfway-fab green">
-          <router-link :to="{name: 'AddRevenue'}">
-            <i class="material-icons">add</i>
-          </router-link>
-        </span>
-      <ul class="revenueRecord">
-        <li v-for="(revenueRecord, index) in revenueRecords" :key="revenueRecord.id">
-          <span class="chip">{{}}</span>
-        </li>
-      </ul>
+  <div class="container is-fluid">
+    <h2 class="title is-2">Revenue</h2>
+    <div class="button is-primary">
+      <router-link :to="{name: 'AddRevenue'}">
+        Add Record
+      </router-link>
     </div>
+    <div>
+      <b-table :data="data" :columns="columns"></b-table>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -20,7 +18,30 @@ export default {
   name: 'Revenue',
   data () {
     return {
-      revenueRecords:[]
+      data: [],
+      columns: [
+        {
+          field: 'date',
+          label: 'Date'
+        },
+        {
+          field: 'invoiceId',
+          label: 'Invoice ID'
+        },
+        {
+          field: 'clientName',
+          label: 'Client name'
+        },
+        {
+          field: 'description',
+          label: 'Description'
+        },
+        {
+          field: 'amount',
+          label: 'Amount',
+          numeric: true
+        }
+      ]
     }
   },
   created () {
@@ -30,7 +51,7 @@ export default {
     snapshot.forEach(doc => {
       let revenue = doc.data()
       revenue.id = doc.id
-      this.revenueRecords.push(revenue)
+      this.data.push(revenue)
       })
     })
   }
@@ -38,12 +59,12 @@ export default {
 </script>
 
 <style scoped>
-.container{
-  width: 90%;
+.container h2{
+  padding-top: 25px;
 }
-.btn-floating.btn-large.halfway-fab{
-  top: 110px;
-  right: 67px;
+.button{
+  position: fixed;
+  top: 120px;
+  right: 75px;
 }
-
 </style>

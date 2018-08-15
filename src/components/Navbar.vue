@@ -1,13 +1,14 @@
 <template>
-  <div class="navbar">
-    <nav class="nav-extended indigo darken-2">
-      <div class="nav-content">
-        <router-link :to="{name: 'Index'}">
-          <span class="nav-title">Finance & Accounting</span>
-        </router-link>
-      </div>
-    </nav>
+<nav class="navbar is-fixed is-light">
+  <div class="navbar-brand">
+    <router-link :to="{name: 'Index'}">
+    <a class="title">
+      <h2 class="title is-2 is-light">Finance & Accounting</h2>
+    </a>
+  </router-link>
   </div>
+
+</nav>
 </template>
 
 <script>
@@ -21,9 +22,10 @@
   }
 </script>
 
-<style>
-.navbar nav{
-  padding: 0 20px;
+<style scoped>
+.navbar{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
 }
-
 </style>

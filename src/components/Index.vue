@@ -1,13 +1,47 @@
 <template>
-  <div class="index container">
+<div class="tile is-ancestor">
+  <div class="tile is-parent">
+    <article class="tile is-child box">
+      <h2 class="title is-2">Revenue</h2>
+      <a class="button is-success is-hovered">
+        <router-link :to="{name: 'Revenue'}">
+          <span>View Detail</span>
+        </router-link>
+      </a>
+    </article>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child box">
+      <h2 class="title is-2">Expenses</h2>
+      <a class="button is-success is-hovered">
+        <router-link :to="{name: 'Expenses'}">
+          <span>View Detail</span>
+        </router-link>
+      </a>
+    </article>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child box">
+      <h2 class="title is-2">Receivables</h2>
+      <a class="button is-success is-hovered">
+        <router-link :to="{name: 'Expenses'}">
+         <span>View Detail</span>
+       </router-link>
+     </a>
+    </article>
+  </div>
+</div>
+  <!-- <div class="index container">
     <div class="card">
       <div class="card-content">
         <h2 class="indigo-text">Revenue</h2>
-          <a href="" class="btn green">
+          <button class="button is-dark">
             <router-link :to="{name: 'Revenue'}">
-              <i class="material-icons">zoom_in</i>
+              <b-icon icon="check"></b-icon>
+              <span>Finish</span>
             </router-link>
-          </a>
+          </button>
+            <router-link :to="{name: 'Revenue'}"></router-link>
         </div>
       </div>
     <div class="card">
@@ -32,7 +66,7 @@
       </div>
     </div>
   </div>
-</template>
+ --></template>
 
 <script>
 import db from '@/firebase/init'
@@ -54,33 +88,24 @@ export default {
   //     })
   //   }
   // },
-  // created () {
-  //   // fetch data from firestore
-  //   db.collection('smoothies').get()
-  //   .then(snapshot => {
-  //     snapshot.forEach(doc => {
-  //       let smoothie = doc.data()
-  //       smoothie.id = doc.id
-  //       this.smoothies.push(smoothie)
+   // created () {
+    // fetch data from firestore
+    // db.collection('smoothies').get()
+    // .then(snapshot => {
+      // snapshot.forEach(doc => {
+        // let smoothie = doc.data()
+        // smoothie.id = doc.id
+        // this.smoothies.push(smoothie)
   //     })
   //   })
   // }
 }
 </script>
 
-<style>
-.container{
-  width: 90%;
-}
-.index{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 30px;
-  margin-top: 60px;
-},
-.index h2{
-  font-size: 1.8em;
-  text-align: left;
-  margin-top: 0;
+<style scoped >
+.is-ancestor{
+padding-right: 75px;
+padding-left: 75px;
+padding-top: 35px;
 }
 </style>
