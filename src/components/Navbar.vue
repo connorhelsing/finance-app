@@ -1,14 +1,18 @@
 <template>
-<nav class="navbar is-fixed is-light">
-  <div class="navbar-brand">
-    <router-link :to="{name: 'Index'}">
-    <a class="title">
-      <h2 class="title is-2 is-light">Finance & Accounting</h2>
-    </a>
-  </router-link>
-  </div>
-
-</nav>
+<div id="navbar">
+  <v-app id="inspire">
+    <v-toolbar>
+      <v-toolbar-side-icon></v-toolbar-side-icon>
+      <v-toolbar-title>Finance & Accounting</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn flat>Link One</v-btn>
+        <v-btn flat>Link Two</v-btn>
+        <v-btn flat>Link Three</v-btn>
+      </v-toolbar-items>
+    </v-toolbar>
+  </v-app>
+</div>
 </template>
 
 <script>
@@ -16,16 +20,16 @@
     name: 'Navbar',
     data() {
       return {
-
       }
     }
   }
 </script>
 
-<style scoped>
-.navbar{
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
+<style>
+.el-menu-item {
+
 }
 </style>
+
+
+

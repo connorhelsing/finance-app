@@ -1,5 +1,18 @@
 <template>
-<div class="tile is-ancestor">
+<div id="index">
+  <v-app id="inspire">
+    <v-container grid-list-md text-xs-center align>
+      <v-layout align-start justify-center row fill-height/>
+        <v-flex v-for="i in 3" :key="`4${i}`" xs4>
+          <v-card dark color="primary">
+            <v-card-text class="px-0">4</v-card-text>
+          </v-card>
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </v-app>
+</div>
+<!-- <div class="tile is-ancestor">
   <div class="tile is-parent">
     <article class="tile is-child box">
       <h2 class="title is-2">Revenue</h2>
@@ -30,43 +43,8 @@
      </a>
     </article>
   </div>
-</div>
-  <!-- <div class="index container">
-    <div class="card">
-      <div class="card-content">
-        <h2 class="indigo-text">Revenue</h2>
-          <button class="button is-dark">
-            <router-link :to="{name: 'Revenue'}">
-              <b-icon icon="check"></b-icon>
-              <span>Finish</span>
-            </router-link>
-          </button>
-            <router-link :to="{name: 'Revenue'}"></router-link>
-        </div>
-      </div>
-    <div class="card">
-      <div class="card-content">
-        <h2 class="indigo-text">Expenses</h2>
-          <a href="" class="btn green">
-            <router-link :to="{name: 'Expenses'}">
-              <i class="material-icons">zoom_in</i>
-            </router-link>
-          </a>
-        </div>
-      </div>
-    <div class="card">
-      <div class="card-content">
-        <h2 class="indigo-text">Receivables</h2>
-          <a href="" class="btn green">
-            <router-link :to="{name: 'Receivables'}">
-              <i class="material-icons">zoom_in</i>
-            </router-link>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
- --></template>
+</div> -->
+</template>
 
 <script>
 import db from '@/firebase/init'
@@ -102,10 +80,6 @@ export default {
 }
 </script>
 
-<style scoped >
-.is-ancestor{
-padding-right: 75px;
-padding-left: 75px;
-padding-top: 35px;
-}
+<style>
+
 </style>
