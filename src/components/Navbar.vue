@@ -1,6 +1,4 @@
 <template>
-<div id="navbar">
-  <v-app id="inspire">
     <v-toolbar>
       <v-toolbar-side-icon></v-toolbar-side-icon>
       <v-toolbar-title>Finance & Accounting</v-toolbar-title>
@@ -11,8 +9,6 @@
         <v-btn flat>Link Three</v-btn>
       </v-toolbar-items>
     </v-toolbar>
-  </v-app>
-</div>
 </template>
 
 <script>

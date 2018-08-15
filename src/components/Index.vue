@@ -1,16 +1,14 @@
 <template>
 <div id="index">
-  <v-app id="inspire">
-    <v-container grid-list-md text-xs-center align>
-      <v-layout align-start justify-center row fill-height/>
-        <v-flex v-for="i in 3" :key="`4${i}`" xs4>
-          <v-card dark color="primary">
-            <v-card-text class="px-0">4</v-card-text>
-          </v-card>
-        </v-flex>
-      </v-layout>
-    </v-container>
-  </v-app>
+<v-container grid-list-md text-xs-center>
+    <v-layout row wrap>
+      <v-flex xs12>
+        <v-card dark color="primary">
+          <v-card-text class="px-0">12</v-card-text>
+        </v-card>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </div>
 <!-- <div class="tile is-ancestor">
   <div class="tile is-parent">
