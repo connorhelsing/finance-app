@@ -1,6 +1,5 @@
 <template>
     <v-toolbar>
-      <v-toolbar-side-icon></v-toolbar-side-icon>
       <v-toolbar-title>Finance & Accounting</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">

@@ -2,9 +2,15 @@
 <div id="index">
 <v-container grid-list-md text-xs-center>
     <v-layout row wrap>
-      <v-flex xs12>
+      <v-flex :key="`4${i}`" xs4>
         <v-card dark color="primary">
-          <v-card-text class="px-0">12</v-card-text>
+          <v-card-text class="px-0">Revenue</v-card-text>
+        </v-card>
+        <v-card dark color="primary">
+          <v-card-text class="px-0">Expenses</v-card-text>
+        </v-card>
+        <v-card dark color="primary">
+          <v-card-text class="px-0">Receivables</v-card-text>
         </v-card>
       </v-flex>
     </v-layout>
