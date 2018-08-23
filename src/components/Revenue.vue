@@ -1,13 +1,28 @@
 <template>
-  <div class="container is-fluid">
-    <h2 class="title is-2">Revenue</h2>
-    <div class="button is-primary">
+  <div class="container">
+    <h2 class="page-title">Revenue</h2>
+    <div class="add-revenue-button">
       <router-link :to="{name: 'AddRevenue'}">
-        Add Record
+        <sui-button circular size="small" color="green" icon="add" />
       </router-link>
     </div>
     <div>
-      <b-table :data="data" :columns="columns"></b-table>
+      <sui-table striped selectable celled>
+        <sui-table-header>
+          <sui-table-row>
+            <sui-table-header-cell v-for="c in columns">{{c.label}}</sui-table-header-cell>
+          </sui-table-row>
+        </sui-table-header>
+        <sui-table-body>
+          <sui-table-row v-for="d in data">
+            <sui-table-cell>{{d.date}}</sui-table-cell>
+            <sui-table-cell>{{d.invoiceId}}</sui-table-cell>
+            <sui-table-cell>{{d.clientName}}</sui-table-cell>
+            <sui-table-cell>{{d.description}}</sui-table-cell>
+            <sui-table-cell>{{d.amount}}</sui-table-cell>
+          </sui-table-row>
+        </sui-table-body>
+      </sui-table>
     </div>
   </div>
 </template>
@@ -21,23 +36,18 @@ export default {
       data: [],
       columns: [
         {
-          field: 'date',
           label: 'Date'
         },
         {
-          field: 'invoiceId',
           label: 'Invoice ID'
         },
         {
-          field: 'clientName',
           label: 'Client name'
         },
         {
-          field: 'description',
           label: 'Description'
         },
         {
-          field: 'amount',
           label: 'Amount',
           numeric: true
         }
@@ -59,12 +69,14 @@ export default {
 </script>
 
 <style scoped>
-.container h2{
-  padding-top: 25px;
+.container{
+  width: 90%;
+  margin: auto;
+  margin-top: 35px;
 }
 .button{
   position: fixed;
-  top: 120px;
-  right: 75px;
+  top: 77px;
+  right: 65px;
 }
 </style>

@@ -1,19 +1,19 @@
 <template>
- <div class="add-revenue container is-fluid">
-   <h2 class="title is-2">Add New Revenue Record</h2>
-   <form @submit="addRevenue">
-  <!--    <b-field label="Date">
-       <b-datepicker
-         placeholder="Type or select a date..."
-         :readonly="falsße">
-       </b-datepicker>
-     </b-field> -->
-     <div v-for="(c, index) in columns" :key="index" class="field">
-       <label for="fields">{{c.label}}</label>
-       <input class="input" type="text" v-model="c.field" placeholder="Enter data here...">
-     </div>
-      <button class="button is-success">Add Record</button>
-   </form>
+ <div class="add-revenue container">
+  <sui-card class="raised">
+    <sui-card-content>
+      <sui-card-header>Add New Revenue Record</sui-card-header>
+    </sui-card-content>
+    <sui-card-content>
+      <sui-form @submit="addRevenue">
+        <div v-for="(c, index) in columns" :key="index" class="field">
+          <label for="fields">{{c.label}}</label>
+          <input class="input" type="text" v-model="c.field" placeholder="Enter data here...">
+        </div>
+        <sui-button color="green">Add Record</sui-button>
+      </sui-form>
+    </sui-card-content>
+  </sui-card>
  </div>
 </template>
 
@@ -48,38 +48,6 @@ export default {
       }).catch(err => {
         console.log(err)
       })
-
-  //
-    // create slug
-  //       this.slug = slugify(this.title, {
-  //         replacement: '-',
-  //         remove: /[$*_+~.()'"!\-:@]/g,
-  //         lower: true
-  //       })
-  //       db.collection('smoothies').add({
-  //         title: this.title,
-  //         ingredients: this.ingredients,
-  //         slug: this.slug
-  //       }).then(() => {
-  //         this.$router.push({name: 'Index'})
-  //       }).catch(err => {
-  //         console.log(err)
-  //       })
-  //   },
-  //   addIng() {
-  //     if(this.another){
-  //       this.ingredients.push(this.another)
-  //       this.another = null
-  //       this.feedback = null
-  //     } else {
-  //       this.feedback = "You must enter a value to add an ingredient"
-  //     }
-  //   },
-  //   deleteIng(ing) {
-  //     this.ingredients = this.ingredients.filter(ingredient => {
-  //       return ingredient != ing
-  //       })
-  //   }
     }
   }
 }
@@ -88,8 +56,14 @@ export default {
 
 <style scoped>
 .container{
-  position: fixed;
-  max-width: 500px;
-  margin: 50px;
+  width: 500px;
+  margin: auto;
+  margin-top: 50px;
+}
+.container .raised{
+  padding: 10px;
+}
+.field.input{
+  width: 500px;
 }
 </style>

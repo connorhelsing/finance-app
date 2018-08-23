@@ -1,14 +1,18 @@
 <template>
-<nav class="navbar is-fixed is-light">
-  <div class="navbar-brand">
-    <router-link :to="{name: 'Index'}">
-    <a class="title">
-      <h2 class="title is-2 is-light">Finance & Accounting</h2>
-    </a>
-  </router-link>
+  <div>
+    <sui-menu attached="top">
+      <sui-menu-menu position="left">
+        <router-link :to="{name: 'Index'}">
+          <h2>Finance & Accounting</h2>
+        </router-link>
+      </sui-menu-menu>
+      <sui-menu-menu position="right">
+        <sui-menu-item right>
+          <sui-input transparent icon="search" placeholder="Search..." />
+        </sui-menu-item>
+      </sui-menu-menu>
+    </sui-menu>
   </div>
-
-</nav>
 </template>
 
 <script>
@@ -23,9 +27,12 @@
 </script>
 
 <style scoped>
-.navbar{
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
+h2{
+  padding-top: 4px;
+  padding-left: 10px;
+  text-decoration: none;
+}
+.router-link-exact-active{
+  text-decoration: none;
 }
 </style>

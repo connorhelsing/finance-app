@@ -1,5 +1,52 @@
 <template>
-<div class="tile is-ancestor">
+  <div class="container">
+    <sui-card-group :items-per-row="3">
+      <sui-card class="raised">
+        <sui-card-content>
+          <sui-card-header>
+            Revenue
+          </sui-card-header>
+        </sui-card-content>
+        <sui-card-content>
+
+        </sui-card-content>
+        <sui-card-content extra>
+          <router-link :to="{name: 'Revenue'}">
+            <sui-button>
+              View Detail
+            </sui-button>
+          </router-link>
+        </sui-card-content>
+      </sui-card>
+      <sui-card class="raised">
+        <sui-card-content>
+          <sui-card-header>
+            Expenses
+          </sui-card-header>
+        </sui-card-content>
+        <sui-card-content>
+
+        </sui-card-content>
+        <sui-card-content extra>
+          <sui-button>View Detail</sui-button>
+        </sui-card-content>
+      </sui-card>
+      <sui-card class="raised">
+        <sui-card-content>
+          <sui-card-header>
+            Receivables
+          </sui-card-header>
+        </sui-card-content>
+        <sui-card-content>
+
+        </sui-card-content>
+        <sui-card-content extra>
+          <sui-button>View Detail</sui-button>
+        </sui-card-content>
+      </sui-card>
+    </sui-card-group>
+  </div>
+<!-- <div class="tile is-ancestor">
   <div class="tile is-parent">
     <article class="tile is-child box">
       <h2 class="title is-2">Revenue</h2>
@@ -30,43 +77,8 @@
      </a>
     </article>
   </div>
-</div>
-  <!-- <div class="index container">
-    <div class="card">
-      <div class="card-content">
-        <h2 class="indigo-text">Revenue</h2>
-          <button class="button is-dark">
-            <router-link :to="{name: 'Revenue'}">
-              <b-icon icon="check"></b-icon>
-              <span>Finish</span>
-            </router-link>
-          </button>
-            <router-link :to="{name: 'Revenue'}"></router-link>
-        </div>
-      </div>
-    <div class="card">
-      <div class="card-content">
-        <h2 class="indigo-text">Expenses</h2>
-          <a href="" class="btn green">
-            <router-link :to="{name: 'Expenses'}">
-              <i class="material-icons">zoom_in</i>
-            </router-link>
-          </a>
-        </div>
-      </div>
-    <div class="card">
-      <div class="card-content">
-        <h2 class="indigo-text">Receivables</h2>
-          <a href="" class="btn green">
-            <router-link :to="{name: 'Receivables'}">
-              <i class="material-icons">zoom_in</i>
-            </router-link>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
- --></template>
+</div> -->
+</template>
 
 <script>
 import db from '@/firebase/init'
@@ -102,10 +114,11 @@ export default {
 }
 </script>
 
-<style scoped >
-.is-ancestor{
-padding-right: 75px;
-padding-left: 75px;
-padding-top: 35px;
+<style scoped>
+.container{
+  margin: auto;
+  margin-top: 35px;
+  width: 90%;
 }
+
 </style>
